@@ -12,6 +12,11 @@
         }
 
         function playRound(playerSelection, computerSelection) {
+            //I need to tell the computer that `rock` beats `scissors`, etc.
+            //so it can compare the strings from playerSelection and computerSelection
+            //and determine who has won. 
+
+            //the below works! It's mostly just that I'm pleased I got something to work :)
             if (playerSelection.length >= computerSelection.length) {
                 console.log(`You win`);
             } else {
@@ -19,7 +24,7 @@
             }
         }
 
-        let playerSelection = `rock`;
+        let playerSelection = `rock`; 
         let computerSelection = computerPlay();
         console.log(playerSelection, computerSelection);
         console.log(playRound(playerSelection, computerSelection));
