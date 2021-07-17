@@ -3,7 +3,7 @@
 <html>
 
     <script>
-        
+           
         let choices = [`rock`, `paper`, `scissors`];  
 
         function computerPlay() {               
@@ -11,10 +11,17 @@
             return selection;
         }
 
+        let answer = prompt(`Please enter one of the following: 'rock', paper' or 'scissors'`);
+        if (answer.length != choices.length) {
+            alert(`Please enter 'rock', paper' or 'scissors'`);
+        }
+
         function playRound(playerSelection, computerSelection) {
             //I need to tell the computer that `rock` beats `scissors`, etc.
-            //so it can compare the strings from playerSelection and computerSelection
-            //and determine who has won. 
+            //so it can then compare the strings from playerSelection and computerSelection
+            //and determine who has won. The most obvious way is 'if else' but it seems
+            //very clunky and long winded
+
 
             //the below works! It's mostly just that I'm pleased I got something to work :)
             if (playerSelection.length >= computerSelection.length) {
@@ -24,7 +31,7 @@
             }
         }
 
-        let playerSelection = `rock`; 
+        let playerSelection = answer.toLowerCase(); 
         let computerSelection = computerPlay();
         console.log(playerSelection, computerSelection);
         console.log(playRound(playerSelection, computerSelection));
