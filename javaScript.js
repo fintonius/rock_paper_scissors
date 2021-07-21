@@ -19,16 +19,22 @@
        //and determine who has won. The most obvious way is 'if else' but it seems
        //very clunky and long winded
        //the below works! It's mostly just that I'm pleased I got something to work :)
-       if (playerSelection.length >= computerSelection.length) {
-           console.log(`You win`);
-       } else {
-           console.log(`you lose`);
-       }
-   }
-
-
+       if (playerSelection == computerSelection) {
+           return(`It's a draw`);
+       } else if (
+        (computerSelection == "rock" && playerSelection == "scissors") ||
+        (computerSelection == "scissors" && playerSelection == "paper") ||
+        (computerSelection == "paper" && playerSelection == "rock")
+        )
+        {
+            return(`you lose`);
+        } else {
+            return(`you win!`);
+        }
+       
+    }
 
    let playerSelection = playerAnswer.toLowerCase(); 
    let computerSelection = computerPlay();
    console.log(playerSelection, computerSelection);
-   console.log(playRound(playerSelection, computerSelection));
+   alert(playRound(playerSelection, computerSelection));
