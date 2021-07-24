@@ -1,9 +1,15 @@
    //test change
-   let choices = [`rock`, `paper`, `scissors`];  
-   let compScore = 0;
-    let playerScore = 0;
-    let gamesPlayed = 0;
-    let playerAnswer = prompt(`Please enter one of the following: 'rock', paper' or 'scissors' `);
+let choices = [`rock`, `paper`, `scissors`];  
+let compScore = 0;
+let playerScore = 0;
+let gamesPlayed = 0;
+let computerSelection = computerPlay();
+let playerSelection;
+
+function myFunction() {    
+    console.log(game(playerSelection, computerSelection));
+  }
+
 
    function computerPlay() {               
        let selection = choices[Math.floor(Math.random() * choices.length)];
@@ -12,11 +18,13 @@
 
 
    function game(playerSelection, computerSelection) {
-     if (gamesPlayed < 4) {
-        alert(playerAnswer = prompt(`Please enter one of the following: 'rock', paper' or 'scissors' `));
-    }
-    if (playerSelection == computerSelection) {
+
+  playerSelection = document.getElementById("input").value;
+    
+    if (playerSelection === computerSelection) {
         gamesPlayed++;
+        console.log(playerSelection, computerSelection);
+    console.log(playerScore, compScore);
         return(`It's a draw`);
     } else if (
      (computerSelection == `rock` && playerSelection == `scissors`) ||
@@ -26,19 +34,24 @@
      {
          compScore++;
          gamesPlayed++;
+         console.log(playerSelection, computerSelection);
+    console.log(playerScore, compScore);
          return(`you lose!`);
      } else {
          playerScore++;
          gamesPlayed++;
+         console.log(playerSelection, computerSelection);
+    console.log(playerScore, compScore);
          return(`you win!`);
-     }                 
+     }  
+                    
  } 
- 
- function keepPlaying() {
-     if (gamesPlayed < 4) {
-    alert(game(playerSelection, computerSelection));
-}
- }
+
+
+    
+
+   
+
  
     //stage 1 complete! now need to make a 5 round game :(
     //can use a 'for loop' I think. Pseudo-code first though! 
@@ -51,15 +64,3 @@
     // function game() {call function (playRound) and loop until either computerTotal or playerTotal == 5/4}
 
     //have a variable for the comp & player scores to store the increments in?
-    
-    
-
-   let playerSelection = playerAnswer.toLowerCase(); 
-   let computerSelection = computerPlay();
-   console.log(playerSelection, computerSelection);
-   alert(game(playerSelection, computerSelection));
-   alert(game(playerSelection, computerSelection));
-   alert(game(playerSelection, computerSelection));
-   console.log(compScore, playerScore);
-   console.log(gamesPlayed);
-   
