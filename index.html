@@ -7,16 +7,22 @@
 
     <body>
         <p><h1>ROCK PAPER SCISSORS</h1></p>
-        <p><h2>Please enter one of the following in the text box below</h2></p> 
+        <p><h2>Please enter one of the following in the text box below then click 'Submit'</h2></p> 
         <p><ul>
             <li>ROCK</li>
             <li>PAPER</li>
             <li>SCISSORS</li>
         </ul></p>
-        <form >
+        <p>Computer's answer:<div id="cAnswer">- </div></p>
+        <form onsubmit="return false">
             <input type="text" id="input" placeholder="input"> 
             <button value='send' id="submit" onclick="myFunction()">Submit</button>
         </form>
+        <section id="scores">
+            <p> Your Score: <div id="pScore">0</div> </p>
+            <p> Computer Score: <div id="cScore">0</div> </p>
+            <p>Games Played: <div id="gameCounter">0</div> </p>
+        </section>
 
     </body>
 
