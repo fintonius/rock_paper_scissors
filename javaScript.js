@@ -1,4 +1,4 @@
-   //test change
+
 let choices = [`rock`, `paper`, `scissors`];  
 let compScore = 0;
 let playerScore = 0;
@@ -20,7 +20,11 @@ function myFunction() {
    function game(playerSelection, computerSelection) {
 
   playerSelection = document.getElementById("input").value;
-    
+  playerSelection = playerSelection.toLowerCase();
+  
+  if (playerSelection != `rock` && playerSelection != `paper` && playerSelection != `scissors`) {
+      alert(`Incorrect answer, please enter 'rock' 'paper' or 'scissors' in the 'Input' box.`);
+  }  
     if (playerSelection === computerSelection) {
         gamesPlayed++;
         console.log(playerSelection, computerSelection);
