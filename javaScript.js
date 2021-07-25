@@ -30,7 +30,7 @@ function myFunction() {
 
 
 function game(playerSelection, computerSelection) {
-    
+
   console.log(gamesPlayed, playerScore, compScore);
   playerSelection = document.getElementById("input").value;
   playerSelection = playerSelection.toLowerCase();
@@ -57,6 +57,10 @@ function game(playerSelection, computerSelection) {
      }  
                     
  } 
+
+ function restart() {
+    location.reload();
+ }
     //stage 1 complete! now need to make a 5 round game :(
     //can use a 'for loop' I think. Pseudo-code first though! 
     //round 1 prompts player to enter answer. Compares against compter answer to determine winner
